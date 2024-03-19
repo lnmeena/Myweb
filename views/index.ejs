@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li class="items" id="item-2"><a href="/index">Home</a></li>
+            <li class="items" id="item-3"><a href="/create">Create Your Blog</a></li>
+            <li class="items" id="item-4"><a href="/update">Update and Delete Your Blogs</a></li>
+        </ul>
+    </nav>
+    <div class="main">
+        <div class="right">
+            <div class="heading">
+                <h1 id="heading">Create Your Own Beautiful Blog...</h1>
+            </div>
+
+            <div class="heading-content">
+                <p class="text">Blog maker websites offer a versatile   and user-friendly platform for individuals and
+                    businesses to create engaging content and share their ideas with the world. These platforms provide
+                    a range of customizable templates, tools, and features that make it easy for users to design and
+                    publish professional-looking blogs without the need for coding or design skills.
+                    One of the key advantages of blog maker websites is their accessibility. They can be used by anyone,
+                    regardless of their technical background, to quickly and easily create a blog that reflects their
+                    style and personality. Additionally, these platforms often offer a variety of publishing options,
+                    allowing users to share their content across different channels and reach a wider audience.</p>
+            </div>
+
+        </div>
+        <div class="left">
+            <img class="typewriter" src="\images\typewriter.webp" alt="typewriter">
+        </div>
+    </div>
+    <div class="articles">
+        <div class="article-description">
+            <h1 id="featured-articles">Featured Articles</h1>
+        </div>
+        <% for(i=data.allBlogs.length-1; i>= 0; i--){ %>
+            <div class="article" id="article1">
+                <div class="right1">
+                    <img class="article-image" src="\images\coffeelaptop.jpg" alt="">
+                </div>
+                <div class="left1">
+                    <h1 class="blog-topic"><a href="#">
+                            <%= data.allBlogs[i].title %>
+                        </a></h1>
+                    <p>
+                        <%= data.allBlogs[i].content %>
+                    </p>
+                    <div class="article-bottom">
+                        <span id="name">Author Name - <%= data.allBlogs[i].name %></span>
+                        <span id="date">Date : <%= data.allBlogs[i].time %></span>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+    </div>
+    <script src="/javascripts/index.js"></script>
+</body>
+
+</html>
